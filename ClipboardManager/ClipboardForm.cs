@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+﻿using System.Data;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ClipboardManager
 {
     public partial class ClipboardForm : Form
     {
 
-        [DllImport("user32.dll")]
+        [LibraryImport("user32.dll")]
         public static extern bool AddClipboardFormatListener(IntPtr hwnd);
-        [DllImport("user32.dll")]
+        [LibraryImport("user32.dll")]
         public static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 
-        private List<ClipboardItem> history = new List<ClipboardItem>();
+        private readonly List<ClipboardItem> history = [];
         private const string PERSISTENCE_PATH = "clipboard_history.json";
 
         public ClipboardForm()
@@ -96,7 +88,7 @@ namespace ClipboardManager
 
         }
 
-        private void ClipboardForm_FormClosing_1(object sender, FormClosingEventArgs e)
+        private void ClipboardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SavePinnedHistory();
             RemoveClipboardFormatListener(this.Handle);

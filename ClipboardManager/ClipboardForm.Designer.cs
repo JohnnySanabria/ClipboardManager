@@ -59,7 +59,7 @@
             Controls.Add(listBox1);
             Name = "ClipboardForm";
             Text = "ClipboardForm";
-            FormClosing += ClipboardForm_FormClosing_1;
+            FormClosing += ClipboardForm_FormClosing;
             ResumeLayout(false);
         }
 
