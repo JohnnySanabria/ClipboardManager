@@ -7,9 +7,9 @@ namespace ClipboardManager
     public partial class ClipboardForm : Form
     {
 
-        [LibraryImport("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern bool AddClipboardFormatListener(IntPtr hwnd);
-        [LibraryImport("user32.dll")]
+        [DllImport("user32.dll")]
         public static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 
         private readonly List<ClipboardItem> history = [];
