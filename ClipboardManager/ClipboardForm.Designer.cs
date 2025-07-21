@@ -30,6 +30,8 @@
         {
             listBox1 = new ListBox();
             button1 = new Button();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // listBox1
@@ -51,16 +53,26 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnPin_Click;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(455, 136);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 2;
+            // 
             // ClipboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(dataGridView1);
             Controls.Add(button1);
             Controls.Add(listBox1);
             Name = "ClipboardForm";
             Text = "ClipboardForm";
             FormClosing += ClipboardForm_FormClosing;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -68,5 +80,6 @@
 
         private ListBox listBox1;
         private Button button1;
+        private DataGridView dataGridView1;
     }
 }

@@ -19,6 +19,13 @@ namespace ClipboardManager
         {
             InitializeComponent();
             AddClipboardFormatListener(this.Handle);
+            this.dataGridView1.DataSource = new BindingSource(history, "");
+            dataGridView1?.Columns["IsPinned"]?.Visible = false; // Hide the IsPinned column in DataGridView
+            dataGridView1?.Columns.Add(new DataGridViewButtonColumn
+            {
+                HeaderText = "Copy",
+                DataPropertyName = "Copy"
+            });
         }
         protected override void WndProc(ref Message m)
         {
