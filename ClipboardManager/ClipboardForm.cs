@@ -88,6 +88,17 @@ namespace ClipboardManager
 
         }
 
+        private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            int index = listBox1.SelectedIndex;
+            if (index >= 0 && index < history.Count)
+            {
+                history[index].IsPinned = !history[index].IsPinned;
+                RefreshList();
+            }
+        }
+
+
         private void ClipboardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SavePinnedHistory();

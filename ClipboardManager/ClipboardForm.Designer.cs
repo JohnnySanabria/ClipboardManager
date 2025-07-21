@@ -39,6 +39,7 @@
             listBox1.Name = "listBox1";
             listBox1.Size = new Size(437, 304);
             listBox1.TabIndex = 0;
+            listBox1.MouseDoubleClick += listBox1_MouseDoubleClick;
             // 
             // button1
             // 
