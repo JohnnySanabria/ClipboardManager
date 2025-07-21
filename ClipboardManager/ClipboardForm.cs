@@ -50,7 +50,7 @@ namespace ClipboardManager
             listBox1.Items.Clear();
             foreach (var i in history)
             {
-                listBox1.Items.Add(i.IsPinned ? $"📌 {i.Text}" : i.Text);
+                listBox1.Items.Add(i.IsPinned ? $"\u2605 {i.Text}" : $"\u2606 {i.Text}");
             }
         }
 
